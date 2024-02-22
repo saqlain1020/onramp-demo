@@ -10,8 +10,11 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@wert-io/widget-initializer": "^5.2.0",
+    "@wert-io/widget-sc-signer": "^2.0.1",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "viem": "^2.7.12"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",

@@ -1,7 +1,7 @@
 import WertWidget from "@wert-io/widget-initializer";
 import { useEffect, useState } from "react";
 import { generateWertSignedData } from "./../../utils/common";
-import { Box, Button, Card, Container, Grid, Typography } from "@mui/material";
+import { Box, Card, Container, Grid, Typography } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { publicClient } from "../../config/viem";
 import { Abis } from "../../assets";

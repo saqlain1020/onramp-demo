@@ -1,5 +1,5 @@
 import { signSmartContractData } from "@wert-io/widget-sc-signer";
-import { encodeFunctionData } from "viem";
+import { encodeFunctionData, parseUnits } from "viem";
 import { Abis } from "../assets";
 import { Contracts, WALLET_PK } from "../config";
 
@@ -7,7 +7,7 @@ export const generateWertSignedData = (receiver: string, usdcAmount: number, ite
   const sc_input_data = encodeFunctionData({
     abi: Abis.sellerAbi,
     functionName: "buy",
-    args: [BigInt(itemId)],
+    args: [BigInt(itemId), parseUnits(String(usdcAmount), 18)],
   });
 
   const signedData: {
@@ -29,5 +29,6 @@ export const generateWertSignedData = (receiver: string, usdcAmount: number, ite
     },
     WALLET_PK
   );
+  console.log("signedData =>", signedData);
   return signedData;
 };

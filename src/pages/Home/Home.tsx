@@ -1,7 +1,7 @@
 import WertWidget from "@wert-io/widget-initializer";
 import { useEffect, useState } from "react";
 import { v4 } from "uuid";
-import { Box, Card, Container, Grid, IconButton, Paper, TextField, Typography } from "@mui/material";
+import { Box, Container, Grid, IconButton, Paper, TextField, Typography } from "@mui/material";
 import LoadingButton from "@mui/lab/LoadingButton";
 import { publicClient } from "../../config/viem";
 import { Abis } from "../../assets";
@@ -9,6 +9,7 @@ import { Contracts } from "../../config";
 import { formatUnits } from "viem";
 import { getSignature } from "../../api/wert";
 import CachedIcon from "@mui/icons-material/Cached";
+import Orders from "./components/Orders/Orders";
 
 const Home = () => {
   const [widgetLoading, setWidgetLoading] = useState(false);
@@ -123,6 +124,7 @@ const Home = () => {
             </Grid>
           </Grid>
         </Paper>
+        <Orders />
       </Container>
     </Box>
   );
